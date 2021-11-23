@@ -5,12 +5,12 @@
 export const LOCATION_CHANGE = '@@router/LOCATION_CHANGE'
 
 export const onLocationChanged = (location, action, isFirstRendering = false) => ({
-  type: LOCATION_CHANGE,
-  payload: {
-    location,
-    action,
-    isFirstRendering,
-  }
+    type: LOCATION_CHANGE,
+    payload: {
+        location,
+        action,
+        isFirstRendering,
+    }
 })
 
 /**
@@ -21,13 +21,13 @@ export const onLocationChanged = (location, action, isFirstRendering = false) =>
 export const CALL_HISTORY_METHOD = '@@router/CALL_HISTORY_METHOD'
 
 const updateLocation = (method) => {
-  return (...args) => ({
-    type: CALL_HISTORY_METHOD,
-    payload: {
-      method,
-      args
-    }
-  })
+    return (...args) => ({
+        type: CALL_HISTORY_METHOD,
+        payload: {
+            method,
+            args
+        }
+    })
 }
 
 /**
@@ -38,7 +38,9 @@ const updateLocation = (method) => {
 export const push = updateLocation('push')
 export const replace = updateLocation('replace')
 export const go = updateLocation('go')
-export const goBack = updateLocation('goBack')
-export const goForward = updateLocation('goForward')
+// export const goBack = updateLocation('goBack')
+// export const goForward = updateLocation('goForward')
+export const goBack = updateLocation('back')
+export const goForward = updateLocation('forward')
 
 export const routerActions = { push, replace, go, goBack, goForward }
